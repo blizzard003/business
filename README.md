@@ -4,7 +4,7 @@ ros2 package
 ![test](https://github.com/blizzard003/business/actions/workflows/test.yml/badge.svg)
 ↑テスト結果
 
-このコマンドは、サービスで読み込ん曜日に応じて、営業か休業か判定するものである。
+このコマンドは、サービスで読み込んだ曜日に応じて、営業か休業か判定するものである。
 
 ## multiコマンドの使い方
 - 
