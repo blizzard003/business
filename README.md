@@ -6,7 +6,7 @@ ros2 package
 
 このコマンドは、serviceで読み込んだ曜日に応じて、営業日か休業日か判定するものである。
 
-## multiコマンドの使い方
+## talkerコマンドの使い方
 - テスト環境で、ros2 run mypkg talkerと入力する。
 - もう一つ端末を開き, ros2 service call query person_msgs/srv/Query "day: 曜日"と入力するとresponceで営業日か休業日か返ってくる。
 - 例) 端末1 入力: ros2 run mypkg talker
