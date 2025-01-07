@@ -5,10 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - uses: actions/checkout@v2
-    - name: Build and test
-      run: |
-        rsync -av ./ /root/ros2_ws/src/mypkg/business
-        chmod +x /root/ros2_ws/src/mypkg/business/test/test.bash  # 実行権限を付与
-        cd /root/ros2_ws/src/mypkg/business/test
-        bash -xv test.bash
-
+    - name: test
+      run: bash -xv ./test.bash
