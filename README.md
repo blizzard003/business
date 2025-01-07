@@ -13,7 +13,7 @@ ros2 package
 
      端末2 入力: ros2 service call query person_msgs/srv/Query "day: 月"
 
-　　　　　 出力: requester: making request: person_msgs.srv.Query_Request(day='月')
+　　　　　 出力: requester: making request: person_msgs.srv.Query_Request(day='月')<br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response:  person_msgs.srv.Query_Response(business='営業日')
 
