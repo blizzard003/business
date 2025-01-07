@@ -12,7 +12,7 @@ ros2 package
 - 例) 端末1 入力: ros2 run mypkg talker
      端末2 入力: ros2 service call query person_msgs/srv/Query "day: 月"
 -　　　　　 出力: requester: making request: person_msgs.srv.Query_Request(day='月')
--                 response:  person_msgs.srv.Query_Response(business='営業日')
+-　                 response:  person_msgs.srv.Query_Response(business='営業日')
 
 ## 必要なソフトウェア
 - ros2
