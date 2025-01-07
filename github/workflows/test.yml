@@ -9,5 +9,7 @@ jobs:
     - name: Build and test
       run: |
         rsync -av ./ /root/ros2_ws/src/mypkg/business
-        cd /root/ros2_ws
-        bash -xv ./src/mypkg/business/test/test.bash
+        chmod +x /root/ros2_ws/src/mypkg/business/test/test.bash  # 実行権限を付与
+        cd /root/ros2_ws/src/mypkg/business/test
+        bash -xv test.bash
+
