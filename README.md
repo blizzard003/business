@@ -15,7 +15,7 @@ ros2 package
 
 　　　　　 出力: requester: making request: person_msgs.srv.Query_Request(day='月')<br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response:  person_msgs.srv.Query_Response(business='営業日')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response:  person_msgs.srv.Query_Response(business='営業日')
 
 ## 必要なソフトウェア
 - ros2
