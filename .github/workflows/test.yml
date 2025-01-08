@@ -1,12 +1,5 @@
 name: test
 on: push
-name: ROS 2 CI
-
-on:
-  push:
-    branches:
-      - main  # main ブランチにプッシュされたときに実行
-
 jobs:
   test:
     runs-on: ubuntu-22.04
