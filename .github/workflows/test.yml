@@ -1,6 +1,8 @@
+name: test
+on: push
 jobs:
-  build:
-    runs-on: ubuntu-22.04
+  test:
+    runs-on: ubuntu-latest
     container:
       image: ros:humble  # ROS 2 Humble のコンテナイメージ
     steps:
