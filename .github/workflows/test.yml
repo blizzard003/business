@@ -12,8 +12,9 @@ jobs:
         uses: actions/checkout@v2  # リポジトリからコードをチェックアウト
 
       - name: Set up ROS 2 environment
+        shell: bash
         run: |
-          source /opt/ros/humble/setup.bash  # ROS 2 環境をセットアップ
+          bash -c "source /opt/ros/humble/setup.bash"  # ROS 2 環境をセットアップ
 
       - name: Install dependencies
         run: |
