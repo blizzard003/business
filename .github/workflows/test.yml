@@ -1,16 +1,30 @@
-name: test
-on: push
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    container:
-      image: ros:humble  # ROS 2 Humble のコンテナイメージ
+  build:
+    runs-on: ubuntu-22.04
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Set up ROS 2 environment
         run: |
-          bash -c "source /opt/ros/humble/setup.bash"
-          # ここに ROS 2 コマンドを実行するスクリプトを追加
-          timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
+          source /opt/ros/humble/setup.bash  # ROS 2 環境をセットアップ
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y python3-colcon-common-extensions  # 必要な依存パッケージをインストール
+
+      - name: Build ROS 2 workspace
+        run: |
+          mkdir -p /root/ros2_ws/src
+          cd /root/ros2_ws
+          colcon build  # ワークスペースをビルド
+
+      - name: Run tests
+        run: |
+          source /opt/ros/humble/setup.bash  # ROS 2 環境のセットアップ
+          source /root/ros2_ws/install/setup.bash  # ワークスペースの環境設定を読み込む
+          timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log  # ros2 コマンドを実行
+
 
