@@ -1,9 +1,14 @@
-name: test
-on: push
-jobs: 
-  test: 
-    runs-on: ubuntu-latest
-    steps: 
-    - uses: actions/checkout@v2
-    - name: test
-      run: bash -xv ./test/test.bash
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    container:
+      image: ros:humble  # ROS 2 Humble のコンテナイメージ
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up ROS 2 environment
+        run: |
+          source /opt/ros/humble/setup.bash
+          # ここに ROS 2 コマンドを実行するスクリプトを追加
+          timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
+
