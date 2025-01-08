@@ -15,7 +15,7 @@ jobs:
         shell: bash
         run: |
           # ROS 2 環境をセットアップ
-          source /opt/ros/humble/setup.bash
+          . /opt/ros/humble/setup.bash  # ここで 'source' を '.' に変更
 
       - name: Install dependencies
         shell: bash
@@ -28,14 +28,14 @@ jobs:
         run: |
           mkdir -p /root/ros2_ws/src
           cd /root/ros2_ws
-          source /opt/ros/humble/setup.bash  # ROS 2 環境を再設定
+          . /opt/ros/humble/setup.bash  # ここで 'source' を '.' に変更
           colcon build  # ROS 2 ワークスペースのビルド
 
       - name: Run tests
         shell: bash
         run: |
-          source /opt/ros/humble/setup.bash  # ROS 2 環境を再設定
-          source /root/ros2_ws/install/setup.bash  # ROS 2 ワークスペースのセットアップ
+          . /opt/ros/humble/setup.bash  # ここで 'source' を '.' に変更
+          . /root/ros2_ws/install/setup.bash  # ここで 'source' を '.' に変更
           timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log  # テスト実行
 
 
