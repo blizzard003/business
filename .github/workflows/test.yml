@@ -28,7 +28,7 @@ jobs:
 
       - name: Run tests
         run: |
-          source /opt/ros/humble/setup.bash
+          bash -c "source /opt/ros/humble/setup.bash"
           source /root/ros2_ws/install/setup.bash  # ROS 2 ワークスペースのセットアップ
           timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
 
