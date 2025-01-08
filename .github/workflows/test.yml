@@ -18,11 +18,13 @@ jobs:
           source /opt/ros/humble/setup.bash
 
       - name: Install dependencies
+        shell: bash
         run: |
           sudo apt update
           sudo apt install -y python3-colcon-common-extensions  # colconのインストール
 
       - name: Build ROS 2 workspace
+        shell: bash
         run: |
           mkdir -p /root/ros2_ws/src
           cd /root/ros2_ws
