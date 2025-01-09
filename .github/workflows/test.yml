@@ -7,11 +7,13 @@ jobs:
     container: 
       image: ryuichiueda/ubuntu22.04-ros2:latest
     steps: 
-    - uses: actions/checkout@v2
+    - name: checkout code 
+      uses: actions/checkout@v2
+
     - name: build and test
       run: |
         mkdir -p /root/ros2_ws/src/mypkg
-        rsync -av ./ / ./ros2_ws/src/mypkg/
+        rsync -av ./ /root/ros2_ws/src/mypkg/
         cd /root/ros2_ws
         rosdep update
         rosdep install -i --from-path src --rosdistro humble -y
