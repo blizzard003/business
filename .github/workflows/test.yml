@@ -9,7 +9,9 @@ jobs:
     steps: 
     - name: checkout code 
       uses: actions/checkout@v2
-
+    - name: Check if the test.bash exists
+      run: ls -l ./src/mypkg/business/test/
+    
     - name: build and test
       run: |
         mkdir -p /root/ros2_ws/src/mypkg
