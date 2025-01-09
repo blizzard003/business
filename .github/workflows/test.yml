@@ -10,7 +10,7 @@ jobs:
     - name: checkout code 
       uses: actions/checkout@v2
     - name: Check if the test.bash exists
-      run: ls -l ./src/mypkg/business/test/
+      run: ls -l ./ros2_ws/src/mypkg/business/test/
     
     - name: build and test
       run: |
